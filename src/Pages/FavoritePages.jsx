@@ -26,6 +26,7 @@ function FavoritePages() {
       return;
     }
     
+    
     const breed1 = selectedDogs[0].breed;
     const breed2 = selectedDogs[1].breed;
     
