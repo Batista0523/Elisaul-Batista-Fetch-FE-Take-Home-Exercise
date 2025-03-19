@@ -16,25 +16,32 @@ function App() {
         const response = await axios.get(`${fetchUrl}/auth/status`, {
           withCredentials: true,
         });
+        console.log(response, 'data here')
         if (response.status === 200) {
           setIsAuthenticated(true);
+        } else {
+          console.error("Authentication failed with status:", response.status, response.data);
         }
       } catch (err) {
-        console.error("Error authenticating user", err);
+        console.error("Error authenticating user:", err.response?.data || err.message);
       }
     };
     checkAuth();
   }, [fetchUrl]);
-
+  
   const handleLogin = () => {
     setIsAuthenticated(true);
+  };
+  const handleLogout = () => {
+    setIsAuthenticated(false);
   };
 
   return (
     <Router>
-      {isAuthenticated && <NavBar />}
+      {isAuthenticated && <NavBar onLogout={handleLogout}/>}
       
       <Routes>
+        
         <Route
           path="/"
           element={
