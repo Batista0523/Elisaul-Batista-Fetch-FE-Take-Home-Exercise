@@ -92,4 +92,4 @@ The AI comparison feature relies on a separate OpenAI server. Please refer to th
 Contributing
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
 
-app lives at[fetch](https://fetchbuddies.netlify.app/)
+app lives at [Fetch🐕Buddies](https://fetchbuddies.netlify.app/)
