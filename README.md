@@ -59,7 +59,6 @@ VITE_BASE_FETCH_URL= your fetch url
 VITE_OPENAI_LOCAL_URL= your server url to run openAI
 
 
-
 Run the Development Server
 
 Start the application using Vite:
@@ -91,12 +90,10 @@ API Endpoints:
 
 The application communicates with a backend service for dog data and authentication at VITE_BASE_FETCH_URL.
 The AI comparison functionality calls the service at VITE_OPENAI_LOCAL_URL.
-The match generation uses the endpoint provided by VITE_MATCH_URL.
+
 OpenAI Server:
-The AI comparison feature relies on a separate OpenAI server. Please refer to the upcoming server repository for detailed setup instructions to run this server locally.
+The AI comparison feature relies on a separate OpenAI server. Please refer to the server repo <[repository-url] (https://github.com/Batista0523/OpenAI-backend-server)> for detailed setup instructions to run this server locally.
 
 Contributing
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
 
-License
-This project is licensed under the MIT License.
