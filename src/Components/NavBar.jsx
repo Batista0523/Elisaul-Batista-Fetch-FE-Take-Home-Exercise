@@ -1,7 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import "./navbar.css"
-function NavBar({ onLogout }) {
+import "./navbar.css";
+
+function NavBar({ isAuthenticated, onLogout }) {
   const navigate = useNavigate();
   const fetchUrl = import.meta.env.VITE_BASE_FETCH_URL;
 
@@ -18,11 +19,19 @@ function NavBar({ onLogout }) {
   return (
     <div className="navbar-container">
       <nav className="navbar">
-        <h1 className="navbar-title">Dog Search App</h1>
+        <h1 className="navbar-title">Fetch🐕Buddies</h1>
         <div className="navbar-links">
-          <Link to='/search' className="nav-link">Search</Link>
-          <Link to='/favorites' className="nav-link">Favorites</Link>
-          <button onClick={handleLogout} className="logout-button">Logout</button>
+          <Link to="/" className="nav-link">Home</Link>
+          {isAuthenticated && (
+            <>
+              <Link to="/search" className="nav-link">Search</Link>
+              <Link to="/favorites" className="nav-link">Favorites</Link>
+              <button onClick={handleLogout} className="logout-button">Logout</button>
+            </>
+          )}
+          {!isAuthenticated && (
+            <Link to="/login" className="nav-link">Login</Link>
+          )}
         </div>
       </nav>
     </div>
