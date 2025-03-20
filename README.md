@@ -36,8 +36,7 @@ Setup Steps
 Clone the Repository
 
 bash
-Copy
-Edit
+
 git clone <[repository-url](https://github.com/Batista0523/Elisaul-Batista-Fetch-FE-Take-Home-Exercise.git)>
 cd fetch-exercise
 Install Dependencies
@@ -45,8 +44,7 @@ Install Dependencies
 Use your package manager to install dependencies:
 
 bash
-Copy
-Edit
+
 npm install
 Configure Environment Variables
 
@@ -64,8 +62,7 @@ Run the Development Server
 Start the application using Vite:
 
 bash
-Copy
-Edit
+
 npm run dev
 The application will be accessible at http://localhost:5173 (or the port indicated in your terminal).
 
@@ -74,16 +71,14 @@ Build for Production
 To build the project for production, run:
 
 bash
-Copy
-Edit
+
 npm run build
 Preview the Production Build
 
 To preview your production build locally, run:
 
 bash
-Copy
-Edit
+
 npm run preview
 Additional Information
 API Endpoints:
@@ -97,3 +92,4 @@ The AI comparison feature relies on a separate OpenAI server. Please refer to th
 Contributing
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
 
+app lives at[fetch](https://fetchbuddies.netlify.app/)
