@@ -5,6 +5,7 @@ import LoginPage from "./Pages/LoginPage";
 import SearchPage from "./Pages/SearchPage";
 import FavoritePages from "./Pages/FavoritePages";
 import NavBar from "./Components/NavBar";
+import Home from "./Pages/Home";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -16,11 +17,8 @@ function App() {
         const response = await axios.get(`${fetchUrl}/auth/status`, {
           withCredentials: true,
         });
-        console.log(response, 'data here')
         if (response.status === 200) {
           setIsAuthenticated(true);
-        } else {
-          console.error("Authentication failed with status:", response.status, response.data);
         }
       } catch (err) {
         console.error("Error authenticating user:", err.response?.data || err.message);
@@ -28,33 +26,34 @@ function App() {
     };
     checkAuth();
   }, [fetchUrl]);
-  
+
   const handleLogin = () => {
     setIsAuthenticated(true);
   };
+
   const handleLogout = () => {
     setIsAuthenticated(false);
   };
 
   return (
     <Router>
-      {isAuthenticated && <NavBar onLogout={handleLogout}/>}
+      <NavBar isAuthenticated={isAuthenticated} onLogout={handleLogout} />
       
       <Routes>
-        
+        <Route path="/" element={<Home />} />
         <Route
-          path="/"
+          path="/login"
           element={
             isAuthenticated ? <Navigate to="/search" /> : <LoginPage onLogin={handleLogin} />
           }
         />
         <Route
           path="/search"
-          element={isAuthenticated ? <SearchPage /> : <Navigate to="/" />}
+          element={isAuthenticated ? <SearchPage /> : <Navigate to="/login" />}
         />
         <Route
           path="/favorites"
-          element={isAuthenticated ? <FavoritePages /> : <Navigate to="/" />}
+          element={isAuthenticated ? <FavoritePages /> : <Navigate to="/login" />}
         />
       </Routes>
     </Router>

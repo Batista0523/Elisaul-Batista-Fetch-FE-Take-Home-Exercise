@@ -1,211 +1,134 @@
+
 .favorites-page {
-    padding: 20px;
-  }
-  
-  .favorites-page h4 {
-    margin-bottom: 15px;
-  }
-  
-  .dog-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  .favorites-page {
-    padding: 20px;
-  }
-  
-  .dog-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  .dog-card {
-    padding: 15px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-  }
-  
-  .dog-card.selected {
-    border-color: #007bff;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
-  }
-  
-  .dog-card:hover {
-    transform: translateY(-3px);
-  }
-  
-  .dog-image {
-    max-width: 100%;
-    max-height: 200px;
-    border-radius: 5px;
-  }
-  .favorites-page {
-    padding: 20px;
-  }
-  
-  .dog-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .dog-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    transition: transform 0.2s;
-  }
-  
-  .dog-card:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-  
-  .dog-card.selected {
-    border: 2px solid #4CAF50;
-    background-color: #f0fff0;
-  }
-  
-  .dog-image {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  .select-button, .compare-button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #4CAF50;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  .select-button:hover, .compare-button:hover {
-    background-color: #45a049;
-  }
-  
-  .comparison-result {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    height: auto;
-    max-width: 100%; /* Asegura que ocupe todo el ancho disponible */
-    overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
-    white-space: pre-wrap; /* Permite que el texto se ajuste automáticamente al ancho del contenedor */
-    word-break: break-word; /* Rompe palabras largas si es necesario */
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-  .select-button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .select-button:hover {
-    background-color: #0056b3;
-  }
-  
+.dog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.dog-card {
+  padding: 15px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dog-card.selected {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.dog-card:hover {
+  transform: translateY(-3px);
+}
+
+.dog-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.select-button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 14px;
+}
+
+.select-button:hover {
+  background-color: #0056b3;
+}
+
+.button-group {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.compare-button {
+  padding: 12px 25px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 10px;
+  font-size: 16px;
+}
+
+.compare-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.compare-button:hover {
+  background-color: #218838;
+}
+
+.comparison-result {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
   .compare-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+      font-size: 15px;
+      padding: 10px 20px;
   }
-  
-  .compare-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+}
+
+@media (max-width: 992px) {
+  .dog-list {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  
-  .comparison-result {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+  .select-button {
+      padding: 7px 12px;
+      font-size: 13px;
   }
-  
+  .compare-button {
+      padding: 9px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .favorites-page {
+      padding: 15px;
+  }
   .dog-card {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    background-color: #f9f9f9;
-    transition: transform 0.3s, box-shadow 0.3s;
+      padding: 12px;
   }
-  
-  .dog-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
   .dog-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .dog-card h5 {
-    margin: 5px 0;
-  }
-  
-  .dog-card p {
-    color: #666;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .dog-list {
-      grid-template-columns: 1fr;
-    }
-  
-    .dog-card {
-      margin: 0 auto;
-      max-width: 90%;
-    }
-  
-    .dog-image {
-      height: auto;
-      max-height: 250px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .favorites-page {
-      padding: 10px;
-    }
-  
-    .dog-card {
-      padding: 8px;
-    }
-  
-    .dog-image {
       height: 180px;
-    }
-  
-    .dog-card h5, .dog-card p {
-      font-size: 0.9rem;
-    }
   }
+  .compare-button
+   {
+      width: 100%;
+      margin: 5px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .dog-list {
+      grid-template-columns: 1fr;
+  }
+  .dog-image {
+      height: 150px;
+  }
+}
