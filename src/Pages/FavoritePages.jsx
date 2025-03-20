@@ -53,6 +53,7 @@ function FavoritePages() {
     setLoadingComparison(true);
     setComparisonText("");
 
+    
     // Retrieve the AI API URL from environment variables
     const openAIurl = import.meta.env.VITE_OPENAI_LOCAL_URL;
 
