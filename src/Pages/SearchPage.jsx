@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./search.css";
+import Fetchrewards from "../Components/Fetchrewards";
 
 function SearchPage() {
   // State variables to manage data and user interactions
@@ -94,7 +95,7 @@ function SearchPage() {
   return (
     <div className="search-page">
       <h4>Dog Search 🦮</h4>
-      <a className="fetch-link" href="https://fetch.com/" target="_blank" rel="noopener noreferrer">Join Fetch Rewards Now 🐶</a>
+      <Fetchrewards/>
 
       {/* Filtering, sorting, and pagination controls */}
       <div className="filter-sort">

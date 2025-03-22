@@ -1,4 +1,5 @@
 
+import Fetchrewards from "../Components/Fetchrewards";
 import "./Home.css"; // Styling for the Home component
 import { Link } from "react-router-dom"; // Link component for navigation between routes
 
@@ -53,9 +54,7 @@ function Home() {
           <li>❤️ Charitable Donations</li>
         </ul>
         <p>Interested? Click the link below to start earning!</p>
-        <a className="fetch-link" href="https://fetch.com/" target="_blank" rel="noopener noreferrer">
-          Join Fetch Rewards Now 🐶
-        </a>
+       <Fetchrewards/>
       </section>
 
       {/* Footer Section */}

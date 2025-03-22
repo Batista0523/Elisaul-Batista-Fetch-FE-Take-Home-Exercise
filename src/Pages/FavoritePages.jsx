@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "./favorite.css";
+import Fetchrewards from "../Components/Fetchrewards";
 
 // FavoritePages Component - Displays favorite dogs, allows selection and AI comparison
 function FavoritePages() {
@@ -37,6 +38,7 @@ function FavoritePages() {
     }
   };
 
+ 
   // Function to generate a comparison using AI when two dogs are selected
   const generateComparison = async () => {
     // Check if exactly two dogs are selected
@@ -53,7 +55,6 @@ function FavoritePages() {
     setLoadingComparison(true);
     setComparisonText("");
 
-    
     // Retrieve the AI API URL from environment variables
     const openAIurl = import.meta.env.VITE_OPENAI_LOCAL_URL;
 
@@ -87,14 +88,7 @@ function FavoritePages() {
       <h4>🦴 Favorites 🦴</h4>
 
       {/* Link to join Fetch Rewards */}
-      <a
-        className="fetch-link"
-        href="https://fetch.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Join Fetch Rewards Now 🐶
-      </a>
+   <Fetchrewards/>
       <br />
 
       {/* Check if there are any favorite dogs */}

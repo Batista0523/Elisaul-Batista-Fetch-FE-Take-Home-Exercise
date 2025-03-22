@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import "./navbar.css";
+import Fetchrewards from './Fetchrewards';
 
 function NavBar({ isAuthenticated, onLogout }) {
   const navigate = useNavigate();
